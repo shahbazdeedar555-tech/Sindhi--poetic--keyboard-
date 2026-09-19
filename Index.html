@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>سنڌي شاعري ڪي بورڊ</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5ecd8;
+  font-family: Arial, "Noto Sans Arabic", sans-serif;
+  color: #173f35;
+}
+
+header {
+  background: #174c3e;
+  color: #f5d98b;
+  text-align: center;
+  padding: 16px 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subtitle {
+  text-align: center;
+  padding: 8px;
+  color: #6b4d20;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 12px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+  border: 2px solid #c49a45;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 27px;
+  line-height: 1.8;
+  direction: rtl;
+  text-align: right;
+  background: #fffdf7;
+  color: #173f35;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #174c3e;
+}
+
+.section-title {
+  text-align: center;
+  margin: 16px 0 8px;
+  font-weight: bold;
+  color: #174c3e;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.row {
+  display: flex;
+  direction: rtl;
+  gap: 5px;
+  width: 100%;
+}
+
+.key {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  border: 1px solid #c49a45;
+  border-radius: 8px;
+  background: #fffdf7;
+  color: #173f35;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.08);
+  touch-action: manipulation;
+}
+
+.key:active {
+  transform: scale(0.95);
+  background: #ead8a9;
+}
+
+/* Special buttons */
+.special .key {
+  background: #ead8a9;
+  color: #174c3e;
+}
+
+/* Space is deliberately normal */
+.space {
+  flex: 3;
+  font-size: 18px;
+}
+
+.delete {
+  background: #ead0c7 !important;
+}
+
+.clear {
+  background: #d9e2d2 !important;
+}
+
+.copy {
+  background: #d9e2d2 !important;
+}
+
+@media (max-width: 420px) {
+  .key {
+    min-height: 44px;
+    font-size: 19px;
+  }
+
+  textarea {
+    font-size: 24px;
+  }
+
+  .space {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  سنڌي شاعري ڪي بورڊ
+</header>
+
+<div class="subtitle">
+  Sindhi Poetry Keyboard
+</div>
+
+<div class="container">
+
+  <textarea id="textBox"
+    placeholder="هتي پنهنجي شاعري لکو..."></textarea>
+
+  <div class="section-title">
+    سنڌي اکر
+  </div>
+
+  <div class="keyboard">
+
+    <!-- پهرين پٽي: توهان جي ڏنل ترتيب -->
+    <div class="row">
+      <button class="key" onclick="writeChar('ا')">ا</button>
+      <button class="key" onclick="writeChar('ب')">ب</button>
+      <button class="key" onclick="writeChar('ٻ')">ٻ</button>
+      <button class="key" onclick="writeChar('پ')">پ</button>
+      <button class="key" onclick="writeChar('ڀ')">ڀ</button>
+      <button class="key" onclick="writeChar('ت')">ت</button>
+      <button class="key" onclick="writeChar('ٺ')">ٺ</button>
+      <button class="key" onclick="writeChar('ٽ')">ٽ</button>
+      <button class="key" onclick="writeChar('ث')">ث</button>
+      <button class="key" onclick="writeChar('ٿ')">ٿ</button>
+      <button class="key" onclick="writeChar('ف')">ف</button>
+      <button class="key" onclick="writeChar('ڦ')">ڦ</button>
+      <button class="key" onclick="writeChar('گ')">گ</button>
+      <button class="key" onclick="writeChar('ڳ')">ڳ</button>
+      <button class="key" onclick="writeChar('ڱ')">ڱ</button>
+      <button class="key" onclick="writeChar('ک')">ک</button>
+      <button class="key" onclick="writeChar('ي')">ي</button>
+      <button class="key" onclick="writeChar('د')">د</button>
+    </div>
+
+    <div class="row">
+      <button class="key" onclick="writeChar('ڍ')">ڍ</button>
+      <button class="key" onclick="writeChar('ڊ')">ڊ</button>
+      <button class="key" onclick="writeChar('ذ')">ذ</button>
+      <button class="key" onclick="writeChar('ر')">ر</button>
+      <button class="key" onclick="writeChar('ڙ')">ڙ</button>
+      <button class="key" onclick="writeChar('ز')">ز</button>
+      <button class="key" onclick="writeChar('س')">س</button>
+      <button class="key" onclick="writeChar('ش')">ش</button>
+      <button class="key" onclick="writeChar('ص')">ص</button>
+      <button class="key" onclick="writeChar('ض')">ض</button>
+      <button class="key" onclick="writeChar('ط')">ط</button>
+      <button class="key" onclick="writeChar('ظ')">ظ</button>
+      <button class="key" onclick="writeChar('ع')">ع</button>
+      <button class="key" onclick="writeChar('غ')">غ</button>
+    </div>
+
+    <div class="row">
+      <button class="key" onclick="writeChar('ل')">ل</button>
+      <button class="key" onclick="writeChar('م')">م</button>
+      <button class="key" onclick="writeChar('ن')">ن</button>
+      <button class="key" onclick="writeChar('ڻ')">ڻ</button>
+      <button class="key" onclick="writeChar('و')">و</button>
+      <button class="key" onclick="writeChar('ه')">ه</button>
+      <button class="key" onclick="writeChar('ھ')">ھ</button>
+      <button class="key" onclick="writeChar('ء')">ء</button>
+      <button class="key" onclick="writeChar('ي')">ي</button>
+      <button class="key" onclick="writeChar('ئ')">ئ</button>
+      <button class="key" onclick="writeChar('ؤ')">ؤ</button>
+      <button class="key" onclick="writeChar('ڪ')">ڪ</button>
+    </div>
+
+    <div class="section-title">
+      خاص نشانيون
+    </div>
+
+    <div class="row special">
+      <button class="key" onclick="writeChar('َ')">َ</button>
+      <button class="key" onclick="writeChar('ِ')">ِ</button>
+      <button class="key" onclick="writeChar('ُ')">ُ</button>
+      <button class="key" onclick="writeChar('ْ')">ْ</button>
+      <button class="key" onclick="writeChar('ّ')">ّ</button>
+      <button class="key" onclick="writeChar('ٰ')">ٰ</button>
+      <button class="key" onclick="writeChar('ـ')">ـ</button>
+    </div>
+
+    <div class="section-title">
+      Space ۽ ڪنٽرول
+    </div>
+
+    <div class="row special">
+
+      <!-- نارمل Space -->
+      <button class="key space" onclick="writeChar(' ')">
+        Space
+      </button>
+
+      <button class="key delete" onclick="backspace()">
+        ⌫
+      </button>
+
+      <button class="key clear" onclick="clearText()">
+        صاف
+      </button>
+
+      <button class="key copy" onclick="copyText()">
+        Copy
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+
+const textBox = document.getElementById("textBox");
+
+function writeChar(char) {
+
+  const start = textBox.selectionStart;
+  const end = textBox.selectionEnd;
+
+  const before = textBox.value.substring(0, start);
+  const after = textBox.value.substring(end);
+
+  textBox.value = before + char + after;
+
+  const newPosition = start + char.length;
+
+  textBox.focus();
+  textBox.setSelectionRange(newPosition, newPosition);
+}
+
+function backspace() {
+
+  const start = textBox.selectionStart;
+  const end = textBox.selectionEnd;
+
+  if (start !== end) {
+
+    textBox.value =
+      textBox.value.substring(0, start) +
+      textBox.value.substring(end);
+
+    textBox.focus();
+    textBox.setSelectionRange(start, start);
+    return;
+  }
+
+  if (start > 0) {
+
+    const before = textBox.value.substring(0, start - 1);
+    const after = textBox.value.substring(end);
+
+    textBox.value = before + after;
+
+    textBox.focus();
+    textBox.setSelectionRange(start - 1, start - 1);
+  }
+}
+
+function clearText() {
+
+  textBox.value = "";
+  textBox.focus();
+}
+
+async function copyText() {
+
+  if (!textBox.value) return;
+
+  try {
+
+    await navigator.clipboard.writeText(textBox.value);
+
+    alert("شاعري Copy ٿي وئي.");
+
+  } catch (error) {
+
+    textBox.select();
+    document.execCommand("copy");
+
+    alert("شاعري Copy ٿي وئي.");
+  }
+}
+
+</script>
+
+</body>
+</html>
